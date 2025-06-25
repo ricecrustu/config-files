@@ -2259,7 +2259,7 @@ rules:
     parameters:
       basic.simultaneous_threshold_milliseconds: 100
 
-# ---------------escape * 2 to exit mouse mode--------------- #
+# ---------------escape to exit mouse mode--------------- #
   - type: basic
     from:
       key_code: escape
@@ -2268,61 +2268,6 @@ rules:
         - any
     to:
     - set_variable:
-        name: escape_pressed
-        value: 0
-    - set_variable:
-        name: mouse_keys_full
-        value: 0
-    conditions:
-    - type: variable_if
-      name: mouse_keys_full
-      value: 1
-    - type: variable_if
-      name: escape_pressed
-      value: 1
-
-  - type: basic
-    from:
-      key_code: escape
-      modifiers:
-        optional:
-        - any
-    to:
-    - set_variable:
-        name: escape_pressed
-        value: 1
-    to_delayed_action:
-      to_if_invoked:
-      - key_code: escape
-        conditions:
-        - type: variable_if
-          name: escape_pressed
-          value: 1
-      - set_variable:
-          name: escape_pressed
-          value: 0
-      to_if_canceled:
-      - key_code: escape
-        conditions:
-        - type: variable_if
-          name: escape_pressed
-          value: 1
-      - set_variable:
-          name: escape_pressed
-          value: 0
-
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: right_command
-    to_after_key_up:
-    - set_variable:
         name: mouse_keys_full
         value: 0
     conditions:
@@ -2330,24 +2275,44 @@ rules:
       name: mouse_keys_full
       value: 1
 
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: right_command
-    to_after_key_up:
-    - set_variable:
-        name: mouse_keys_full
-        value: 1
-    conditions:
-    - type: variable_if
-      name: mouse_keys_full
-      value: 0
+# ---------------left + right_command to toggle mouse mode--------------- #
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: right_command
+  #   to_after_key_up:
+  #   - set_variable:
+  #       name: mouse_keys_full
+  #       value: 0
+  #   conditions:
+  #   - type: variable_if
+  #     name: mouse_keys_full
+  #     value: 1
+
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: right_command
+  #   to_after_key_up:
+  #   - set_variable:
+  #       name: mouse_keys_full
+  #       value: 1
+  #   conditions:
+  #   - type: variable_if
+  #     name: mouse_keys_full
+  #     value: 0
 
 # ---------------h to mouse wheel left----------------- #
   - type: basic
