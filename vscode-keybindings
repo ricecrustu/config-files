@@ -1,0 +1,196 @@
+// Place your key bindings in this file to override the defaults
+[
+    // gh hover scroll mappings
+    {
+        "key": "h",
+        "command": "editor.action.scrollLeftHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "j",
+        "command": "editor.action.scrollDownHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "k",
+        "command": "editor.action.scrollUpHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "l",
+        "command": "editor.action.scrollRightHover",
+        "when": "editorHoverFocused"
+    },
+    // file explorer mappings
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "x",
+        "command": "filesExplorer.cut",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "y",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && foldersViewVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "c",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    // window navigation mappings
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+        "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+        "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+    },
+    // Quick Navigation for diff view
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.compareEditor.focusSecondarySide",
+        "when": "isInDiffEditor && !isInDiffLeftEditor"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "isInDiffEditor && isInDiffLeftEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.compareEditor.focusPrimarySide",
+        "when": "isInDiffEditor && isInDiffLeftEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "isInDiffEditor && !isInDiffLeftEditor"
+    },
+    // whichkey mappings
+    {
+        "key": "wk",
+        "command": "whichkey.show",
+        "when": "neovim.mode != 'insert' && !inputFocus"
+    },
+    {
+        "key": "backspace",
+        "command": "whichkey.undoKey",
+        "when": "whichkeyVisible"
+    },
+    // list navigation
+    {
+        "key": "ctrl+f",
+        "command": "list.find",
+        "when": "listFocus && !inputFocus && listSupportsFind && !editorFocus"
+    },
+    //Neovim Keybinding Passthrougs
+    {
+        "command": "vscode-neovim.send",
+        // Invoke the binding with this key sequence.
+        "key": "alt+k",
+        // Don't activate during insert mode.
+        // Docs for "when": https://code.visualstudio.com/api/references/when-clause-contexts
+        "when": "editorTextFocus && neovim.mode != insert",
+        // Send this input to Neovim.
+        "args": "<A-k>",
+    },
+    {
+        "command": "vscode-neovim.send",
+        // Invoke the binding with this key sequence.
+        "key": "alt+j",
+        // Don't activate during insert mode.
+        // Docs for "when": https://code.visualstudio.com/api/references/when-clause-contexts
+        "when": "editorTextFocus && neovim.mode != insert",
+        // Send this input to Neovim.
+        "args": "<A-j>",
+    },
+    {
+        "command": "vscode-neovim.send",
+        // Invoke the binding with this key sequence.
+        "key": "alt+h",
+        // Don't activate during insert mode.
+        // Docs for "when": https://code.visualstudio.com/api/references/when-clause-contexts
+        "when": "editorTextFocus && neovim.mode != insert",
+        // Send this input to Neovim.
+        "args": "<A-h>",
+    },
+    {
+        "command": "vscode-neovim.send",
+        // Invoke the binding with this key sequence.
+        "key": "alt+l",
+        // Don't activate during insert mode.
+        // Docs for "when": https://code.visualstudio.com/api/references/when-clause-contexts
+        "when": "editorTextFocus && neovim.mode != insert",
+        // Send this input to Neovim.
+        "args": "<A-l>",
+    }
+    // germanscroll mappings to preserve folded regions in vim
+    // {
+    //     "command": "germanScroll.arminUp",
+    //     "key": "ctrl+y",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "command": "germanScroll.arminDown",
+    //     "key": "ctrl+e",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "command": "germanScroll.bertholdUp",
+    //     "key": "ctrl+u",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "command": "germanScroll.bertholdDown",
+    //     "key": "ctrl+d",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "command": "germanScroll.christaUp",
+    //     "key": "ctrl+b",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "command": "germanScroll.christaDown",
+    //     "key": "ctrl+f",
+    //     "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+    // },
+]
