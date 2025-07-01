@@ -15,14 +15,14 @@ opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to qu
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically. Requires Neovim >= 0.10.0
 -- opt.clipboard = "unnamedplus" -- Sync with system clipboard
--- opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
+opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 
 -- Fix markdown indentation settings
--- vim.g.markdown_recommended_style = 0
+vim.g.markdown_recommended_style = 0
 
 if vim.g.vscode then
     -- VSCode specific settings

@@ -30,6 +30,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
+    -- { import = "plugins_neovim",    cond = (function() return not vim.g.vscode end) },
     { import = "plugins_vscode",    cond = (function() return vim.g.vscode end) },
   },
   -- Configure any other settings here. See the documentation for more details.
