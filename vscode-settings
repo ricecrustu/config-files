@@ -209,6 +209,10 @@
     "security.workspace.trust.untrustedFiles": "open",
     "settingsSync.keybindingsPerPlatform": false,
     "terminal.integrated.inheritEnv": false,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/*/**",
+        "**/data/*/**"
+    ],
     "todo-tree.general.tagGroups": {
         "[x]": [
             "[x]",
@@ -216,12 +220,17 @@
         ],
         "TODO": [
             "TODO",
-            "[TODO]"
+            "[TODO]",
+            "[ ]"
         ],
         "FIXME": [
             "FIXME",
             "[FIXME]"
         ],
+        "INFO": [
+            "[INFO]",
+            "*"
+        ]
     },
     "todo-tree.general.tags": [
         "BUG",
@@ -236,26 +245,32 @@
         "?",
         "!!",
         "xTODO",
-        "MOD"
+        "MOD",
+        "*",
+        "[INFO]",
+        "INFO"
     ],
     "todo-tree.highlights.customHighlight": {
         "!!": {
             "background": "#454158",
-            "foreground": "#FF2D00",
+            "foreground": "#FF80BF",
             "icon": "alert",
-            "iconColour": "#FF9580"
+            "iconColour": "#FF80BF",
+            "type": "tag-and-comment",
+        },
+        "INFO": {
+            "background": "#454158",
+            "foreground": "#8AFF80",
+            "icon": "info",
+            "iconColour": "#8AFF80",
+            "type": "tag-and-comment",
         },
         "?": {
             "background": "#454158",
-            "foreground": "#3498DB",
+            "foreground": "#FFCA80",
             "icon": "question",
-            "iconColour": "#FFCA80"
-        },
-        "[ ]": {
-            "background": "#454158",
-            "foreground": "#80FFEA",
-            "icon": "issue-draft",
-            "iconColour": "#80FFEA",
+            "iconColour": "#FFCA80",
+            "type": "tag-and-comment",
         },
         "[x]": {
             "background": "#454158",
@@ -275,7 +290,6 @@
             "icon": "tools"
         },
         "TODO": {
-            // "background": "#454158",
             "foreground": "#80FFEA",
             "icon": "issue-opened",
             "iconColour": "#80FFEA",
