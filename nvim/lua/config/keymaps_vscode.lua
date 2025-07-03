@@ -7,6 +7,12 @@ r.noremap({"n", "v"}, "<LocalLeader>", "<cmd>lua require('vscode').action('which
 r.noremap("n", "<tab>", "<cmd>Tabnext<cr>", "Next Tab" )
 r.noremap("n", "<s-tab>", "<cmd>Tabprevious<cr>", "Previous Tab" )
 
+-- Window Movement (overwriting the default keybindings to move the editor group)
+r.noremap("n", "<C-h>H", "<cmd>lua require('vscode').action('workbench.action.moveEditorToLeftGroup')<cr>", "Move editor to Left Window" )
+r.noremap("n", "<C-h>J", "<cmd>lua require('vscode').action('workbench.action.moveEditorToBelowGroup')<cr>", "Move editor to Below Window" )
+r.noremap("n", "<C-h>K", "<cmd>lua require('vscode').action('workbench.action.moveEditorToAboveGroup')<cr>", "Move editor to Above Window" )
+r.noremap("n", "<C-h>L", "<cmd>lua require('vscode').action('workbench.action.moveEditorToRightGroup')<cr>", "Move editor to Right Window" )
+
 -- Buffer/File Navigation
 r.noremap("n", "<Leader>be", "<cmd>Edit<cr>", "Edit file/Quick Open in VSCode" )
 r.noremap("n", "<Leader>bl", "<cmd>lua require('vscode').action('workbench.action.showEditorsInActiveGroup')<cr>", "List Buffers in current group" )
@@ -29,24 +35,21 @@ r.noremap("n", "<Leader>di", "<cmd>lua require('vscode').action('workbench.actio
 r.noremap("n", "<Leader>do", "<cmd>lua require('vscode').action('workbench.action.debug.stepOver')<cr>", "Step Over Debugging" )
 r.noremap("n", "<Leader>dO", "<cmd>lua require('vscode').action('workbench.action.debug.stepOut')<cr>", "Step Out Debugging" )
 r.noremap("n", "<Leader>db", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<cr>", "Toggle Breakpoint" )
+r.noremap("n", "<Leader>da", "<cmd>lua require('vscode').action('debug.enableOrDisableBreakpoint')<cr>", "Enable/Disable Breakpoint" )
+r.noremap("n", "<Leader>dn", "<cmd>lua require('vscode').action('editor.debug.action.goToNextBreakpoint')<cr>", "Go to Next Breakpoint" )
+r.noremap("n", "<Leader>dp", "<cmd>lua require('vscode').action('editor.debug.action.goToPreviousBreakpoint')<cr>", "Go to Previous Breakpoint" )
 r.noremap("n", "<Leader>dh", "<cmd>lua require('vscode').action('editor.debug.action.showDebugHover')<cr>", "Show Debug Hover" )
 
 
 -- Action
-r.noremap({ "n", "x" }, "<leader>ar", function()
-  vscode.with_insert(function()
-    vscode.action("editor.action.rename")
-  end)
-end)
-
 r.noremap({ "n", "x" }, "<leader>aR", function()
   vscode.with_insert(function()
     vscode.action("editor.action.refactor")
   end)
 end)
 
+r.noremap({"n", "x"}, "<leader>ar", "<cmd>lua require('vscode').action('editor.action.rename')<cr>", "Rename symbol" )
 r.noremap({"n", "x"}, "<leader>aq", "<cmd>lua require('vscode').action('editor.action.quickFix')<cr>", "Quick Fix" )
-
 
 -- Error
 r.noremap("n", "<Leader>el", "<cmd>lua require('vscode').action('workbench.actions.view.problems')<cr>", "View Problems" )
@@ -76,3 +79,4 @@ r.noremap("n", "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)")
 
 r.noremap("n", "=p", "<Plug>(YankyPutAfterFilter)")
 r.noremap("n", "=P", "<Plug>(YankyPutBeforeFilter)")
+
