@@ -5,6 +5,13 @@
     "vim.easymotion": true,
     "vim.easymotionMarkerForegroundColorOneChar": "#80ffea",
     "vim.foldfix": true,
+     "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "#454158",
+    "vim.highlightedyank.duration": 250,
+     "vim.smartRelativeLine": true,
+     "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+     }
     "vim.handleKeys": {
         "<C-a>": false,
         // "<C-f>": false,
