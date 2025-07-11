@@ -32,6 +32,7 @@
     "editor.accessibilitySupport": "off",
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.find.autoFindInSelection": "multiline",
+    "editor.semanticHighlighting.enabled": true,
     "editor.fontSize": 16,
     "editor.fontWeight": "100",
     // "editor.fontFamily": "FiraCode Nerd Font Mono",
@@ -198,18 +199,12 @@
     "latex-workshop.showContextMenu": true,
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "latex-workshop.view.pdf.viewer": "tab",
-    "outline.collapseItems": "alwaysCollapse",
-    "projectManager.tags": [
-        "Personal",
-        "Research",
-        "Remote",
-        "Course"
-    ],
     "python.analysis.inlayHints.functionReturnTypes": true,
     "security.workspace.trust.untrustedFiles": "open",
     "settingsSync.keybindingsPerPlatform": false,
     "terminal.integrated.inheritEnv": false,
     "todo-tree.filtering.excludeGlobs": [
+        ".venv/*/**",
         "**/node_modules/*/**",
         "**/data/*/**"
     ],
@@ -256,21 +251,21 @@
             "foreground": "#FF80BF",
             "icon": "alert",
             "iconColour": "#FF80BF",
-            "type": "tag-and-comment",
+            "type": "text-and-comment",
         },
         "INFO": {
-            "background": "#454158",
+            // "background": "#454158",
             "foreground": "#8AFF80",
             "icon": "info",
             "iconColour": "#8AFF80",
-            "type": "tag-and-comment",
+            "type": "text-and-comment",
+            "fontWeight": "300"
         },
         "?": {
-            "background": "#454158",
             "foreground": "#FFCA80",
             "icon": "question",
             "iconColour": "#FFCA80",
-            "type": "tag-and-comment",
+            "type": "text-and-comment",
         },
         "[x]": {
             "background": "#454158",
@@ -284,7 +279,7 @@
             "foreground": "#80FFEA",
             "icon": "flame",
             "iconColour": "#80FFEA",
-            "type": "text"
+            "type": "text-and-comment"
         },
         "HACK": {
             "icon": "tools"
@@ -293,7 +288,7 @@
             "foreground": "#80FFEA",
             "icon": "issue-opened",
             "iconColour": "#80FFEA",
-            "type": "text"
+            "type": "text-and-comment"
         },
         "MOD": {
             "background": "#454158",
@@ -306,378 +301,9 @@
         }
     },
     "typescript.suggest.paths": false,
-    "vim.changeWordIncludesWhitespace": true,
-    "vim.cursorStylePerMode.replace": "underline",
-    "vim.easymotion": true,
-    "vim.easymotionMarkerForegroundColorOneChar": "#80ffea",
-    "vim.foldfix": true,
-    "vim.handleKeys": {
-        "<C-a>": false,
-        // "<C-f>": false,
-        // "<C-n>": false,
-        "<C-w>": false
-    },
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindingsNonRecursive": [
-        {
-            "after": [
-                "<Esc>"
-            ],
-            "before": [
-                "j",
-                "k"
-            ]
-        }
-    ],
-    "vim.leader": "\\",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "g",
-                "p",
-                "d"
-            ],
-            "commands": [
-                "editor.action.peekDefinition"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "h"
-            ],
-            "commands": [
-                "editor.action.showDefinitionPreviewHover"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "p",
-                "i"
-            ],
-            "commands": [
-                "editor.action.peekImplementation"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "r"
-            ],
-            "commands": [
-                "editor.action.referenceSearch.trigger"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "q"
-            ],
-            "commands": [
-                "editor.action.quickFix"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "t"
-            ],
-            "commands": [
-                "editor.action.goToTypeDefinition"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "p",
-                "t"
-            ],
-            "commands": [
-                "editor.action.peekTypeDefinition"
-            ]
-        },
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "whichkey.show"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "/"
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "after": [
-                "^"
-            ],
-            "before": [
-                "H",
-            ]
-        },
-        {
-            "after": [
-                "$"
-            ],
-            "before": [
-                "L"
-            ]
-        },
-        {
-            "after": [
-                "<leader>",
-                "<leader>",
-                "/"
-            ],
-            "before": [
-                "<leader>",
-                "f"
-            ]
-        },
-        {
-            "before": [
-                "n",
-            ],
-            "after": [
-                "n",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "N",
-            ],
-            "after": [
-                "N",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "o",
-            ],
-            "after": [
-                "o",
-                "<esc>"
-            ]
-        },
-        {
-            "before": [
-                "O",
-            ],
-            "after": [
-                "O",
-                "<esc>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "b"
-            ],
-            "commands": [
-                "editor.debug.action.toggleBreakpoint"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "a"
-            ],
-            "commands": [
-                "debug.enableOrDisableBreakpoint"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c"
-            ],
-            "commands": [
-                "workbench.action.debug.continue"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "o"
-            ],
-            "commands": [
-                "workbench.action.debug.stepOut"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.debug.stepOver"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "i"
-            ],
-            "commands": [
-                "workbench.action.debug.stepInto"
-            ]
-        },
-        {
-            "before": [
-                "<Tab>"
-            ],
-            "commands": [
-                ":tabn"
-            ]
-        },
-        {
-            "before": [
-                "<Shift+tab>",
-            ],
-            "commands": [
-                ":tabp"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "m"
-            ],
-            "commands": [
-                ":marks"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "j"
-            ],
-            "commands": [
-                ":ju"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "m"
-            ],
-            "commands": [
-                ":delm!"
-            ]
-        }
-    ],
-    "vim.operatorPendingModeKeyBindings": [
-        {
-            "before": [
-                "L",
-            ],
-            "after": [
-                "$"
-            ]
-        },
-        {
-            "after": [
-                "^"
-            ],
-            "before": [
-                "H"
-            ]
-        }
-    ],
-    "vim.useCtrlKeys": true,
-    "vim.useSystemClipboard": true,
-    "vim.visualModeKeyBindings": [
-        {
-            "after": [
-                "<Esc>"
-            ],
-            "before": [
-                "v"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        },
-        {
-            "after": [
-                "$"
-            ],
-            "before": [
-                "L"
-            ]
-        },
-        {
-            "after": [
-                "^"
-            ],
-            "before": [
-                "H"
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "whichkey.show"
-            ]
-        },
-        {
-            // By default, "p" in visual mode will copy whatever text was replaced. To prevent this, after pasting, select the newly replaced text and copy it.
-            "before": [
-                "p"
-            ],
-            "after": [
-                "p",
-                "g",
-                "v",
-                "y"
-            ]
-        },
-    ],
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.preferredDarkColorTheme": "Dracula Pro",
-    "workbench.preferredLightColorTheme": "Dracula Pro (Alucard)",
+    "window.zoomLevel": 1,
+    "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
     "window.commandCenter": false,
     "projectManager.showProjectNameInStatusBar": false,
     "editor.smoothScrolling": true,
@@ -701,19 +327,16 @@
     "workbench.editor.tabSizing": "shrink",
     "workbench.fontAliasing": "antialiased",
     "editor.cursorSurroundingLines": 8,
-    "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.color": "#454158",
-    "vim.highlightedyank.duration": 250,
     "workbench.iconTheme": "catppuccin-mocha",
     "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
+        "asvetliakov.vscode-neovim": 1
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "whichkey.bindings": [
         {
-            "key": "\\",
+            "key": " ",
             "name": "Commands",
             "type": "command",
             "command": "workbench.action.showCommands"
@@ -730,14 +353,14 @@
             "type": "bindings",
             "bindings": [
                 {
-                    "key": "b",
-                    "name": "Show all editors",
+                    "key": "L",
+                    "name": "List all editors",
                     "type": "command",
                     "command": "workbench.action.showAllEditors"
                 },
                 {
-                    "key": "B",
-                    "name": "Show all editors in active group",
+                    "key": "l",
+                    "name": "List all editors in active group",
                     "type": "command",
                     "command": "workbench.action.showEditorsInActiveGroup"
                 },
@@ -772,133 +395,10 @@
                     "command": "workbench.action.joinAllGroups"
                 },
                 {
-                    "key": "m",
-                    "name": "+Move",
-                    "type": "bindings",
-                    "bindings": [
-                        {
-                            "key": "h",
-                            "name": "Move editor into left group",
-                            "type": "command",
-                            "command": "workbench.action.moveEditorToLeftGroup"
-                        },
-                        {
-                            "key": "j",
-                            "name": "Move editor into below group",
-                            "type": "command",
-                            "command": "workbench.action.moveEditorToBelowGroup"
-                        },
-                        {
-                            "key": "k",
-                            "name": "Move editor into above group",
-                            "type": "command",
-                            "command": "workbench.action.moveEditorToAboveGroup"
-                        },
-                        {
-                            "key": "l",
-                            "name": "Move editor into right group",
-                            "type": "command",
-                            "command": "workbench.action.moveEditorToRightGroup"
-                        },
-                        {
-                            "key": "H",
-                            "name": "Move editor group left",
-                            "type": "command",
-                            "command": "workbench.action.moveActiveEditorGroupLeft"
-                        },
-                        {
-                            "key": "J",
-                            "name": "Move editor group down",
-                            "type": "command",
-                            "command": "workbench.action.moveActiveEditorGroupDown"
-                        },
-                        {
-                            "key": "K",
-                            "name": "Move editor group up",
-                            "type": "command",
-                            "command": "workbench.action.moveActiveEditorGroupUp"
-                        },
-                        {
-                            "key": "L",
-                            "name": "Move editor group right",
-                            "type": "command",
-                            "command": "workbench.action.moveActiveEditorGroupRight"
-                        }
-                    ]
-                },
-                {
-                    "key": "f",
-                    "name": "+Focus",
-                    "type": "bindings",
-                    "bindings": [
-                        {
-                            "key": "h",
-                            "name": "Focus editor group left",
-                            "type": "command",
-                            "command": "workbench.action.focusLeftGroup"
-                        },
-                        {
-                            "key": "j",
-                            "name": "Focus editor group down",
-                            "type": "command",
-                            "command": "workbench.action.focusBelowGroup"
-                        },
-                        {
-                            "key": "k",
-                            "name": "Focus editor group up",
-                            "type": "command",
-                            "command": "workbench.action.focusAboveGroup"
-                        },
-                        {
-                            "key": "l",
-                            "name": "Focus editor group right",
-                            "type": "command",
-                            "command": "workbench.action.focusRightGroup"
-                        }
-                    ]
-                },
-                {
-                    "key": "s",
-                    "name": "+Split",
-                    "type": "bindings",
-                    "bindings": [
-                        {
-                            "key": "j",
-                            "name": "Split editor below",
-                            "type": "command",
-                            "command": "workbench.action.splitEditorDown"
-                        },
-                        {
-                            "key": "l",
-                            "name": "Split editor right",
-                            "type": "command",
-                            "command": "workbench.action.splitEditorRight"
-                        },
-                        {
-                            "key": "k",
-                            "name": "Split editor up",
-                            "type": "command",
-                            "command": "workbench.action.splitEditorUp"
-                        },
-                        {
-                            "key": "h",
-                            "name": "Split editor left",
-                            "type": "command",
-                            "command": "workbench.action.splitEditorLeft"
-                        }
-                    ]
-                },
-                {
-                    "key": "d",
+                    "key": "q",
                     "name": "+Close",
                     "type": "bindings",
                     "bindings": [
-                        {
-                            "key": "d",
-                            "name": "Close active editor",
-                            "type": "command",
-                            "command": "workbench.action.closeActiveEditor"
-                        },
                         {
                             "key": "o",
                             "name": "Close other editors",
@@ -925,49 +425,6 @@
                         }
                     ]
                 },
-                {
-                    "key": "w",
-                    "name": "+Window Size",
-                    "type": "bindings",
-                    "bindings": [
-                        {
-                            "key": "m",
-                            "name": "Maximize editor group",
-                            "type": "command",
-                            "command": "workbench.action.minimizeOtherEditors"
-                        },
-                        {
-                            "key": "M",
-                            "name": "Maximize editor group and hide side bar",
-                            "type": "command",
-                            "command": "workbench.action.minimizeOtherEditorsHideSidebar"
-                        },
-                        {
-                            "key": "h",
-                            "name": "Decrease editor width",
-                            "type": "command",
-                            "command": "workbench.action.decreaseViewWidth"
-                        },
-                        {
-                            "key": "l",
-                            "name": "Increase editor width",
-                            "type": "command",
-                            "command": "workbench.action.increaseViewWidth"
-                        },
-                        {
-                            "key": "j",
-                            "name": "Decrease editor height",
-                            "type": "command",
-                            "command": "workbench.action.decreaseViewHeight"
-                        },
-                        {
-                            "key": "k",
-                            "name": "Increase editor height",
-                            "type": "command",
-                            "command": "workbench.action.increaseViewHeight"
-                        }
-                    ]
-                }
             ]
         },
         {
@@ -1018,13 +475,13 @@
                     "command": "workbench.action.debug.stepInto"
                 },
                 {
-                    "key": "s",
+                    "key": "o",
                     "name": "Step over",
                     "type": "command",
                     "command": "workbench.action.debug.stepOver"
                 },
                 {
-                    "key": "o",
+                    "key": "O",
                     "name": "Step out",
                     "type": "command",
                     "command": "workbench.action.debug.stepOut"
@@ -1138,73 +595,6 @@
                     "name": "Next spelling error",
                     "type": "command",
                     "command": "cSpell.goToPreviousSpellingIssue"
-                }
-            ]
-        },
-        {
-            "key": "m",
-            "name": "+Bookmarks",
-            "type": "bindings",
-            "bindings": [
-                {
-                    "key": "s",
-                    "name": "Show Bookmarks",
-                    "type": "command",
-                    "command": "bookmarksExplorer.focus"
-                },
-                {
-                    "key": "l",
-                    "name": "List Bookmarks",
-                    "type": "command",
-                    "command": "bookmarks.list"
-                },
-                {
-                    "key": "L",
-                    "name": "List Bookmarks from all files",
-                    "type": "command",
-                    "command": "bookmarks.listFromAllFiles"
-                },
-                {
-                    "key": "c",
-                    "name": "Clear Bookmarks",
-                    "type": "command",
-                    "command": "bookmarks.clear"
-                },
-                {
-                    "key": "C",
-                    "name": "Clear Bookmarks from all files",
-                    "type": "command",
-                    "command": "bookmarks.clearFromAllFiles"
-                },
-                {
-                    "key": "t",
-                    "name": "Toggle bookmark",
-                    "type": "command",
-                    "command": "bookmarks.toggle"
-                },
-                {
-                    "key": "T",
-                    "name": "Toggle labeled bookmark",
-                    "type": "command",
-                    "command": "bookmarks.toggleLabeled"
-                },
-                {
-                    "key": "n",
-                    "name": "Jump to next bookmark",
-                    "type": "command",
-                    "command": "bookmarks.jumpToNext"
-                },
-                {
-                    "key": "p",
-                    "name": "Jump to previous bookmark",
-                    "type": "command",
-                    "command": "bookmarks.jumpToPrevious"
-                },
-                {
-                    "key": "r",
-                    "name": "Refresh bookmarks",
-                    "type": "command",
-                    "command": "bookmarks.refresh"
                 }
             ]
         },
@@ -1692,44 +1082,6 @@
                     "command": "editor.action.refactor"
                 },
                 {
-                    "key": "u",
-                    "name": "To lower case",
-                    "type": "command",
-                    "command": "editor.action.transformToLowercase"
-                },
-                {
-                    "key": "U",
-                    "name": "To upper case",
-                    "type": "command",
-                    "command": "editor.action.transformToUppercase"
-                },
-                {
-                    "key": "J",
-                    "name": "Move lines down transient",
-                    "type": "commands",
-                    "commands": [
-                        "editor.action.moveLinesDownAction",
-                        "whichkey.showTransient"
-                    ],
-                    "args": [
-                        null,
-                        "whichkey.transient.lineMoving"
-                    ]
-                },
-                {
-                    "key": "K",
-                    "name": "Move lines up transient",
-                    "type": "commands",
-                    "commands": [
-                        "editor.action.moveLinesUpAction",
-                        "whichkey.showTransient"
-                    ],
-                    "args": [
-                        null,
-                        "whichkey.transient.lineMoving"
-                    ]
-                },
-                {
                     "key": "l",
                     "name": "+Lines",
                     "type": "bindings",
@@ -1910,29 +1262,16 @@
             "type": "command",
             "command": "workbench.action.toggleZenMode"
         },
-        {
-            "key": "v",
-            "name": "Smart select/expand region transient",
-            "type": "commands",
-            "commands": [
-                "editor.action.smartSelect.grow",
-                "whichkey.showTransient"
-            ],
-            "args": [
-                null,
-                "whichkey.transient.smartExpand"
-            ]
-        }
     ],
     "whichkey.sortOrder": "typeThenCustom",
-    "vim.smartRelativeLine": true,
     "zenMode.hideLineNumbers": false,
     "zenMode.restore": false,
     "zenMode.hideStatusBar": false,
     "bookmarks.gutterIconBorderColor": "#74c7ec",
     "bookmarks.gutterIconFillColor": "#00000000",
-    "window.menuBarVisibility": "toggle",
     "errorLens.messageBackgroundMode": "message",
+    "errorLens.padding": "2px 0.5ch",
+    "errorLens.borderRadius": "0.3em",
     "errorLens.messageTemplate": "$severity $message",
     "errorLens.severityText": [
         "⛔",
@@ -1940,8 +1279,8 @@
         "ℹ️",
         "🍏"
     ],
-    "workbench.preferredHighContrastColorTheme": "Dracula Pro",
-    "workbench.preferredHighContrastLightColorTheme": "Dracula Pro (Alucard)",
+    "workbench.preferredHighContrastColorTheme": "Catppuccin Mocha",
+    "workbench.preferredHighContrastLightColorTheme": "Catppuccin Latte",
     "window.density.editorTabHeight": "compact",
     "git.repositoryScanMaxDepth": 2,
     "python.analysis.supportDocstringTemplate": true,
@@ -1978,7 +1317,7 @@
     "gitlens.ai.model": "vscode",
     "gitlens.ai.vscode.model": "copilot:gpt-4o",
     "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.colorTheme": "Dracula Pro",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "commentBox.styles": {
         "defaultStyle": {
             "capitalize": false,
@@ -2030,5 +1369,32 @@
             ],
             "boxWidth": 64
         }
-    }
+    },
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+        "jk": {
+            // Use lua to execute any logic
+            "command": "vscode-neovim.lua",
+            "args": [
+                [
+                    "local code = require('vscode')",
+                    "code.action('vscode-neovim.escape')",
+                    "code.action('workbench.action.files.save')",
+                ],
+            ],
+        },
+    },
+    "editor.lineNumbers": "relative",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.stickyScroll.enabled": false,
+    "workbench.editor.showTabs": "single",
+    "gitlens.launchpad.indicator.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "solid",
 }
