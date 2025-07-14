@@ -1,0 +1,9 @@
+font-family = "Maple Mono NF CN"
+font-size = 20
+theme = catppuccin-mocha
+macos-titlebar-style = hidden
+
+window-width = 120
+window-height = 35
+window-padding-x = 10
+window-padding-y = 20,0
