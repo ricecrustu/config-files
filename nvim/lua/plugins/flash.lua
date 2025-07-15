@@ -10,8 +10,19 @@ return {
       },
       modes = {
         char = {
-          -- jump_labels = true,            -- show labels for jumps
+          -- jump_labels = false,            -- show labels for jumps
           keys = { "f", "F", "t", "T" }, -- keys to use for char mode
+           config = function(opts)
+            -- disable jump labels when not enabled, when using a count,
+            -- or when recording/executing registers
+            -- opts.jump_labels = opts.jump_labels
+            --   and vim.v.count == 0
+            --   and vim.fn.reg_executing() == ""
+            --   and vim.fn.reg_recording() == ""
+
+            -- Show jump labels only in operator-pending mode
+            opts.jump_labels = vim.v.count == 0 and vim.fn.mode(true):find("o")
+      end,
         }
       },
     },
