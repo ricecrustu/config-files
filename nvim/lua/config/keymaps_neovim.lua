@@ -53,14 +53,14 @@ r.noremap("n", "<leader>ui", vim.show_pos, "Inspect Pos")
 r.noremap("n", "<leader>uI", function() vim.treesitter.inspect_tree() vim.api.nvim_input("I") end, "Inspect Tree")
 
 -- Copy absolute filepath to the clipboard
-r.noremap("n", "<leader>cP", function()
+r.noremap("n", "<leader>f/", function()
   local filepath = vim.fn.expand("%:p")
   vim.fn.setreg("+", filepath)
   vim.notify("Copied file path: " .. filepath, vim.log.levels.INFO)
 end, "Copy absolute File Path to Clipboard")
 
 -- Copy relative filepath to the clipboard
-r.noremap("n", "<leader>cp", function()
+r.noremap("n", "<leader>f.", function()
   local filepath = vim.fn.expand("%:~")
   vim.fn.setreg("+", filepath)
   vim.notify("Copied file path: " .. filepath, vim.log.levels.INFO)
