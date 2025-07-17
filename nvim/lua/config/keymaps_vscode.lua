@@ -61,17 +61,6 @@ r.noremap("n", "<Right>", function() manageEditorWidth("increase") end,
   "Increase Window Width")
 
 
-r.noremap("n", "<Leader>ff", function() -- Find in files for word under cursor
-  vscode.action("workbench.action.findInFiles", {
-    args = { query = vim.fn.expand('<cword>') }
-  })
-end, "Find in Files for Word Under Cursor")
-
-r.noremap("v", "<Leader>ff", function() -- Find in files for word under cursor
-  vscode.action("workbench.action.findInFiles", {
-    args = { query = r.get_visual_selection() }
-  })
-end, "Find in Files for Visual Selection")
 
 -- Harpoon file navigation
 r.noremap("n", "<Leader>he", function()
@@ -88,6 +77,108 @@ r.noremap("n", "<Leader>hj", function()
 end, "Go to Previous Harpoon Editor")
 
 
+-- ] next <item>
+r.noremap("n", "]e", function()
+    vscode.action("editor.action.marker.next")
+    end, "Go to next error"
+)
+r.noremap("n", "]s", function()
+    vscode.action("cSpell.goToNextSpellingIssue")
+    end, "Go to next spelling issue"
+)
+
+-- [ previous <item>
+r.noremap("n", "[e", function()
+    vscode.action("editor.action.marker.prev")
+    end, "Go to previous error"
+)
+r.noremap("n", "[s", function()
+    vscode.action("cSpell.goToPreviousSpellingIssue")
+    end, "Go to previous spelling issue"
+)
+
+-- Buffer
+r.noremap("n", "<Leader>be", function() vscode.action("workbench.action.showEditorsInActiveGroup") end, "Edit buffer in tab group")
+r.noremap("n", "<Leader>bE", function() vscode.action("workbench.action.showAllEditors") end, "Edit buffer")
+r.noremap("n", "<Leader>bu", function() vscode.action("workbench.action.reopenClosedEditor") end, "Reopen closed buffer")
+r.noremap("n", "<Leader>bd", function() vscode.action("workbench.action.closeActiveEditor") end, "Close buffer")
+r.noremap("n", "<Leader>b<", function() vscode.action("workbench.action.moveEditorLeftInGroup") end, "Move editor left in group")
+r.noremap("n", "<Leader>b>", function() vscode.action("workbench.action.moveEditorRightInGroup") end, "Move editor right in group")
+
+
+-- File & Explorer
+r.noremap("n", "<Leader>e", function() vscode.action("workbench.view.explorer") end, "File explorer")
+r.noremap("n", "<Leader>ff", function() vscode.action("workbench.action.quickOpen") end, "Find files")
+r.noremap("n", "<Leader>fe", function() vscode.action("workbench.files.action.showActiveFileInExplorer") end, "Reveal file in file explorer")
+r.noremap("n", "<Leader>fr", function() vscode.action("workbench.action.openRecent") end, "Open recent files")
+r.noremap("n", "<Leader>fn", function() vscode.action("workbench.action.files.newUntitledFile") end, "Open new untitled file")
+r.noremap("n", "<Leader>fs", function() vscode.action("workbench.action.files.save") end, "Save file")
+r.noremap("n", "<Leader>fS", function() vscode.action("workbench.action.files.saveFiles") end, "Save all files")
+r.noremap("n", "<Leader>f/", function() vscode.action("copyFilePath") end, "Copy absolute path of current file")
+r.noremap("n", "<Leader>f.", function() vscode.action("copyRelativeFilePath") end, "Copy relative path of current file")
+r.noremap("n", "<Leader>fp", function() vscode.action("workbench.action.openRecent") end, "Find projects")
+r.noremap("n", "<Leader>fR", function() 
+    vscode.action("workbench.files.action.showActiveFileInExplorer") 
+    vscode.action("renameFile") 
+    end, "Rename current file")
+
+-- Search 
+r.noremap("n", "<Leader>ss", function() vscode.action("workbench.action.gotoSymbol") end, "Search symbol in file")
+r.noremap("n", "<Leader>sS", function() vscode.action("workbench.action.showAllSymbols") end, "Search symbol in workplace")
+r.noremap("n", "<Leader>sg", function() vscode.action("workbench.action.findInFiles") end, "Search grep/globally")
+r.noremap("n", "<Leader>sb", function() vscode.action("breadcrumbs.focusAndSelect") end, "Search & select breadcrumbs")
+r.noremap("n", "<Leader>sw", function() -- Find in files for word under cursor
+  vscode.action("workbench.action.findInFiles", {
+    args = { query = vim.fn.expand('<cword>') }
+  })
+end, "Search the Word Under Cursor")
+
+r.noremap("v", "<Leader>sw", function() -- Find in files for word under cursor
+  vscode.action("workbench.action.findInFiles", {
+    args = { query = r.get_visual_selection() }
+  })
+end, "Search the Visual Selection")
+
+-- Debug
+r.noremap("n", "<Leader>dd", function() vscode.action("workbench.action.debug.start") end, "Start debug")
+r.noremap("n", "<Leader>dr", function() vscode.action("workbench.action.debug.run") end, "Start run")
+r.noremap("n", "<Leader>dR", function() vscode.action("workbench.action.debug.restart") end, "Restart debug")
+r.noremap("n", "<Leader>dx", function() vscode.action("workbench.action.debug.stop") end, "Stop debug")
+r.noremap("n", "<Leader>dc", function() vscode.action("workbench.action.debug.continue") end, "Continue debug")
+r.noremap("n", "<Leader>dp", function() vscode.action("workbench.action.debug.pause") end, "Pause debug")
+r.noremap("n", "<Leader>di", function() vscode.action("workbench.action.debug.stepInto") end, "Step Into")
+r.noremap("n", "<Leader>do", function() vscode.action("workbench.action.debug.stepOver") end, "Step Over")
+r.noremap("n", "<Leader>dO", function() vscode.action("workbench.action.debug.stepOut") end, "Step Out")
+r.noremap("n", "<Leader>db", function() vscode.action("editor.debug.action.toggleBreakpoint") end, "Toggle breakpoint")
+r.noremap("n", "<Leader>dB", function() vscode.action("editor.debug.action.toggleInlineBreakpoint") end, "Toggle inline breakpoint")
+r.noremap("n", "<Leader>dt", function() vscode.action("workbench.debug.action.toggleRepl") end, "Toggle debug console")
+r.noremap("n", "<Leader>dw", function() vscode.action("editor.debug.action.selectionToWatch") end, "Add to watch")
+r.noremap("n", "<Leader>dW", function() vscode.action("workbench.debug.action.focusWatchView") end, "Toggle watch window")
+r.noremap("n", "<Leader>dh", function() vscode.action("editor.debug.action.showDebugHover") end, "Show debug hover")
+r.noremap("n", "<Leader>de", function() vscode.action("editor.debug.action.editBreakpoint") end, "Edit breakpoint")
+r.noremap("n", "<Leader>da", function() vscode.action("debug.enableOrDisableBreakpoint") end, "Enable/Disable breakpoint")
+r.noremap("n", "<Leader>dv", function() vscode.action("workbench.debug.action.focusVariablesView") end, "Toggle debugger variable view")
+
+
+-- Toggle
+r.noremap("n", "<Leader>ts", function() vscode.action("workbench.action.toggleSidebarVisibility") end, "Toggle side bar")
+r.noremap("n", "<Leader>tb", function() vscode.action("workbench.action.togglePanel") end, "Toggle panel")
+r.noremap("n", "<Leader>tB", function() vscode.action("workbench.action.toggleMaximizedPanel") end, "Toggle maximized panel")
+r.noremap("n", "<Leader>tp", function() vscode.action("workbench.actions.view.problems") end, "Toggle problems")
+r.noremap("n", "<Leader>to", function() vscode.action("workbench.action.output.toggleOutput") end, "Toggle output")
+r.noremap("n", "<Leader>tt", function() vscode.action("workbench.action.terminal.focus") end, "Toggle terminal")
+r.noremap("n", "<Leader>td", function() vscode.action("workbench.view.debug") end, "Toggle run and debug")
+r.noremap("n", "<Leader>tx", function() vscode.action("workbench.view.extensions") end, "Toggle extentions")
+r.noremap("n", "<Leader>tg", function() vscode.action("workbench.view.scm") end, "Toggle git")
+
+
+-- UI
+r.noremap("n", "<Leader>ua", function() vscode.action("workbench.action.toggleActivityBarVisibility") end, "Toggle activity bar")
+r.noremap("n", "<Leader>uf", function() vscode.action("workbench.action.toggleFullScreen") end, "Toggle full screen")
+r.noremap("n", "<Leader>uz", function() vscode.action("workbench.action.toggleFullScreen") end, "Toggle zen mode")
+r.noremap("n", "<Leader>uC", function() vscode.action("workbench.action.selectTheme") end, "Select Colortheme")
+
+-- r.noremap("n", "<Leader>", function() vscode.action("") end, "")
 
 -- Action
 -- r.noremap({ "n", "x" }, "<leader>aR", function()
