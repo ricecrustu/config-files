@@ -7,7 +7,7 @@ return {
   },
   keys = {
     {
-      "<leader>p",
+      "<leader>y",
       function()
         vim.cmd([[YankyRingHistory]])
       end,
