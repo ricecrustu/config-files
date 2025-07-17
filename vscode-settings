@@ -66,7 +66,7 @@
         "**/.git/subtree-cache/**": true,
         "**/.hg/store/**": true,
         "**/node_modules/*/**": true,
-        ".idea/**": true,
+        ".idea/**": true
     },
     "git.autofetch": true,
     "git.enableSmartCommit": true,
@@ -199,6 +199,7 @@
     "latex-workshop.showContextMenu": true,
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "latex-workshop.view.pdf.viewer": "tab",
+    "outline.collapseItems": "alwaysCollapse",
     "python.analysis.inlayHints.functionReturnTypes": true,
     "security.workspace.trust.untrustedFiles": "open",
     "settingsSync.keybindingsPerPlatform": false,
@@ -353,13 +354,13 @@
             "type": "bindings",
             "bindings": [
                 {
-                    "key": "L",
+                    "key": "E",
                     "name": "List all editors",
                     "type": "command",
                     "command": "workbench.action.showAllEditors"
                 },
                 {
-                    "key": "l",
+                    "key": "e",
                     "name": "List all editors in active group",
                     "type": "command",
                     "command": "workbench.action.showEditorsInActiveGroup"
@@ -369,12 +370,6 @@
                     "name": "Reopen closed editor",
                     "type": "command",
                     "command": "workbench.action.reopenClosedEditor"
-                },
-                {
-                    "key": "=",
-                    "name": "Reset editor group sizes",
-                    "type": "command",
-                    "command": "workbench.action.evenEditorWidths"
                 },
                 {
                     "key": "<",
@@ -387,12 +382,6 @@
                     "name": "Move editor right in group",
                     "type": "command",
                     "command": "workbench.action.moveEditorRightInGroup"
-                },
-                {
-                    "key": "z",
-                    "name": "Combine all editors",
-                    "type": "command",
-                    "command": "workbench.action.joinAllGroups"
                 },
                 {
                     "key": "q",
@@ -416,12 +405,6 @@
                             "name": "Close all editor groups",
                             "type": "command",
                             "command": "workbench.action.closeAllGroups"
-                        },
-                        {
-                            "key": "w",
-                            "name": "Close window",
-                            "type": "command",
-                            "command": "workbench.action.closeWindow"
                         }
                     ]
                 },
@@ -505,19 +488,19 @@
                     "command": "debug.jumpToCursor"
                 },
                 {
-                    "key": "v",
+                    "key": "t",
                     "name": "REPL",
                     "type": "command",
                     "command": "workbench.debug.action.toggleRepl"
                 },
                 {
-                    "key": "w",
+                    "key": "W",
                     "name": "Focus on watch window",
                     "type": "command",
                     "command": "workbench.debug.action.focusWatchView"
                 },
                 {
-                    "key": "W",
+                    "key": "w",
                     "name": "Add to watch",
                     "type": "command",
                     "command": "editor.debug.action.selectionToWatch"
@@ -547,7 +530,7 @@
                     "command": "debug.enableOrDisableBreakpoint"
                 },
                 {
-                    "key": "t",
+                    "key": "v",
                     "name": "Toggle debugger variable view",
                     "type": "command",
                     "command": "workbench.debug.action.focusVariablesView"
@@ -556,53 +539,21 @@
         },
         {
             "key": "e",
-            "name": "+Errors",
+            "name": "File explorer",
             "type": "bindings",
-            "bindings": [
-                {
-                    "key": ".",
-                    "name": "Error transient",
-                    "type": "command",
-                    "command": "whichkey.showTransient",
-                    "args": "whichkey.transient.error"
-                },
-                {
-                    "key": "l",
-                    "name": "List errors",
-                    "type": "command",
-                    "command": "workbench.actions.view.problems"
-                },
-                {
-                    "key": "n",
-                    "name": "Next error",
-                    "type": "command",
-                    "command": "editor.action.marker.next"
-                },
-                {
-                    "key": "p",
-                    "name": "Previous error",
-                    "type": "command",
-                    "command": "editor.action.marker.prev"
-                },
-                {
-                    "key": "s",
-                    "name": "Next spelling error",
-                    "type": "command",
-                    "command": "cSpell.goToNextSpellingIssue"
-                },
-                {
-                    "key": "S",
-                    "name": "Next spelling error",
-                    "type": "command",
-                    "command": "cSpell.goToPreviousSpellingIssue"
-                }
-            ]
+            "command": "workbench.view.explorer"
         },
         {
             "key": "f",
             "name": "+File",
             "type": "bindings",
             "bindings": [
+                {
+                    "key": "f",
+                    "name": "Find files",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                },
                 {
                     "key": "o",
                     "name": "Open file/folder",
@@ -786,6 +737,37 @@
             ]
         },
         {
+            "key": "h",
+            "name": "+Harpoon",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "a",
+                    "name": "Add file to harpoon",
+                    "type": "command",
+                    "command": "vscode-harpoon.addEditor"
+                },
+                {
+                    "key": "l",
+                    "name": "List harpooned files",
+                    "type": "command",
+                    "command": "vscode-harpoon.editorQuickPick"
+                },
+                {
+                    "key": "e",
+                    "name": "Edit harpooned files",
+                    "type": "command",
+                    "command": "vscode-harpoon.editEditors"
+                },
+                {
+                    "key": "j",
+                    "name": "Jump to the previous harpooned editor",
+                    "type": "command",
+                    "command": "vscode-harpoon.gotoPreviousHarpoonEditor"
+                }
+            ]
+        },
+        {
             "key": "p",
             "name": "+Project",
             "type": "bindings",
@@ -846,39 +828,26 @@
             "type": "bindings",
             "bindings": [
                 {
-                    "key": "h",
-                    "name": "Highlight symbol transient",
-                    "type": "commands",
-                    "commands": [
-                        "editor.action.wordHighlight.trigger",
-                        "whichkey.showTransient"
-                    ],
-                    "args": [
-                        null,
-                        "whichkey.transient.symbol"
-                    ]
-                },
-                {
-                    "key": "j",
-                    "name": "Jump to symbol in file",
+                    "key": "s",
+                    "name": "Search symbol in file",
                     "type": "command",
                     "command": "workbench.action.gotoSymbol"
                 },
                 {
-                    "key": "J",
-                    "name": "Jump to symbol in workspace",
+                    "key": "S",
+                    "name": "Search symbol in workspace",
                     "type": "command",
                     "command": "workbench.action.showAllSymbols"
                 },
                 {
-                    "key": "p",
-                    "name": "Search in a project",
+                    "key": "g",
+                    "name": "Search grep/globally",
                     "type": "command",
                     "command": "workbench.action.findInFiles"
                 },
                 {
-                    "key": "P",
-                    "name": "Search in a project with a selection",
+                    "key": "w",
+                    "name": "Search the Visual Selection",
                     "type": "commands",
                     "commands": [
                         "editor.action.addSelectionToNextFindMatch",
@@ -898,7 +867,7 @@
                     "command": "editor.action.startFindReplaceAction"
                 },
                 {
-                    "key": "s",
+                    "key": "v",
                     "name": "Find & Replace in selection",
                     "type": "command",
                     "command": "toggleFindInSelection"
@@ -912,64 +881,64 @@
             ]
         },
         {
-            "key": "t",
-            "name": "+Toggles/Show",
+            "key": "u",
+            "name": "+Toggle UI elements",
             "type": "bindings",
             "bindings": [
                 {
-                    "key": "u",
-                    "name": "+Toggle UI elements",
-                    "type": "bindings",
-                    "bindings": [
-                        {
-                            "key": "a",
-                            "name": "Toggle activity bar visibility",
-                            "type": "command",
-                            "command": "workbench.action.toggleActivityBarVisibility"
-                        },
-                        {
-                            "key": "s",
-                            "name": "Toggle status bar visibility",
-                            "type": "command",
-                            "command": "workbench.action.toggleStatusbarVisibility"
-                        }
-                    ]
-                },
-                {
-                    "key": "b",
-                    "name": "Toggle side bar visibility",
+                    "key": "a",
+                    "name": "Toggle activity bar visibility",
                     "type": "command",
-                    "command": "workbench.action.toggleSidebarVisibility"
+                    "command": "workbench.action.toggleActivityBarVisibility"
                 },
                 {
-                    "key": "p",
-                    "name": "Toggle panel visibility",
+                    "key": "C",
+                    "name": "Select Colortheme",
                     "type": "command",
-                    "command": "workbench.action.togglePanel"
+                    "command": "workbench.action.selectTheme"
                 },
                 {
-                    "key": "F",
+                    "key": "s",
+                    "name": "Toggle status bar visibility",
+                    "type": "command",
+                    "command": "workbench.action.toggleStatusbarVisibility"
+                },
+                {
+                    "key": "f",
                     "name": "Toggle full screen",
                     "type": "command",
                     "command": "workbench.action.toggleFullScreen"
                 },
                 {
-                    "key": "S",
-                    "name": "Select theme",
+                    "key": "z",
+                    "name": "Toggle zen mode",
                     "type": "command",
-                    "command": "workbench.action.selectTheme"
+                    "command": "workbench.action.toggleZenMode"
+                },
+            ]
+        },
+        {
+            "key": "t",
+            "name": "+Toggles/Show",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "s",
+                    "name": "Toggle side bar visibility",
+                    "type": "command",
+                    "command": "workbench.action.toggleSidebarVisibility"
                 },
                 {
-                    "key": "M",
+                    "key": "b",
+                    "name": "Toggle panel visibility",
+                    "type": "command",
+                    "command": "workbench.action.togglePanel"
+                },
+                {
+                    "key": "B",
                     "name": "Toggle maximized panel",
                     "type": "command",
                     "command": "workbench.action.toggleMaximizedPanel"
-                },
-                {
-                    "key": "e",
-                    "name": "Show explorer",
-                    "type": "command",
-                    "command": "workbench.view.explorer"
                 },
                 {
                     "key": "s",
@@ -978,8 +947,14 @@
                     "command": "workbench.view.search"
                 },
                 {
+                    "key": "p",
+                    "name": "Toggle problems",
+                    "type": "command",
+                    "command": "workbench.actions.view.problems"
+                },
+                {
                     "key": "g",
-                    "name": "Show source control",
+                    "name": "Toggle git",
                     "type": "command",
                     "command": "workbench.view.scm"
                 },
@@ -1015,9 +990,9 @@
                 },
                 {
                     "key": "d",
-                    "name": "Show debug console",
+                    "name": "Toggle run and debug",
                     "type": "command",
-                    "command": "workbench.debug.action.toggleRepl"
+                    "command": "workbench.view.debug"
                 },
                 {
                     "key": "t",
@@ -1053,8 +1028,8 @@
             ]
         },
         {
-            "key": "a",
-            "name": "+Editor Actions",
+            "key": "c",
+            "name": "+Code Actions",
             "type": "bindings",
             "bindings": [
                 {
@@ -1255,12 +1230,6 @@
             "name": "Repeat most recent action",
             "type": "command",
             "command": "whichkey.repeatMostRecent"
-        },
-        {
-            "key": "z",
-            "name": "Toggle zen mode",
-            "type": "command",
-            "command": "workbench.action.toggleZenMode"
         },
     ],
     "whichkey.sortOrder": "typeThenCustom",
