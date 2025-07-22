@@ -1,5 +1,9 @@
 font-family = "Maple Mono NF CN"
 font-size = 20
+font-style = Light 
+font-style-bold = SemiBold
+font-style-italic = Light Italic
+font-style-bold-italic = Semibold Italic
 theme = catppuccin-mocha
 macos-titlebar-style = hidden
 
